@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <link rel = "icon" href = "https://cdn.onlinewebfonts.com/svg/img_156416.png" type = "image/x-icon">
+</head>
+<body style="background-color:rgb(219, 243, 243);">
+
+
+  <!-- Navigation Bar -->
+  <nav style="position: fixed; width: 100%; " class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <h5 class="navbar-brand" href="#">HATE SPEECH DETECTOR</h5>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div style="margin-left: 28%;" class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link active" href="http://127.0.0.1:5000/">Home</a>
+        <a class="nav-item nav-link" href="http://localhost/pages/About.php">About</a>
+        <a class="nav-item nav-link" href="http://localhost/pages/Contact.php">Contact</a>
+        <a class="nav-item nav-link" href="http://localhost/pages/Instruction.php">Instruction</a>
+      </div>
+      </div>
+    </div>
+  </nav>
+
+    <h1 class="h1" style="color: black;padding-top:10%;margin-left:5%">
+      Hate Speech Detector
+    </h1>
+
+    <br><br>
+  <!-- Image -->
+    <img style="margin-left: 15%; margin-top: 40px;" width="1100px" height="400px" src="https://www.deccanherald.com/sites/dh/files/styles/article_detail/public/articleimages/2023/03/07/hate-speech-istock-1159678-1667655673-1197872-1678134532.jpg?itok=kt0cFEZz">
+    <!-- Paragraph -->
+    <p  >Hate speech refers to any speech or action that incites violence or prejudicial behavior towards an individual 
+      or group, based on their race, ethnicity, religion, sexual orientation, gender identity, or other characteristic.
+       It is not protected under the First Amendment and can vary by country. Combating hate speech requires education,
+        promoting diversity and inclusion, and policies and laws that protect against discrimination.The main goal of
+         this project is to find hate speech from given text.This tool give result as hate speech detected or not.</p>
+
+
+
+    <form action="{{url_for('predict')}}" id="form" method="post">
+        <!-- Textarea,label and submit button -->
+        <label style="margin-left: 15%; margin-right: 15%;" for="percent"><h3 class="h3">Enter your text for hate speech detection in English </h3></label><br>
+        <div style="margin-left: 20%;">
+        <textarea type="text" class="form-control" oninput="clk()" style="width:800px;height:200px" name="percent" id="percent" placeholder="Enter" rows="50" cols="10" width="800px" required="required" ></textarea><br></div>
+            
+        <h4 class="h4" id="op" style="margin-left:20%;"></h4>
+        <button class="btn btn-primary" style="margin-left: 20%;" type="submit">submit</button>
+    </form>
+   
+    <br><br><br>
+
+    
+
+    <script>
+      
+      /*{{ip}} data return from app.py's /predict with name ip*/
+      let ip="{{ip}}"
+      /*{{prediction_text}} data return from app.py's /predict with name prediction_text*/
+      let val="{{prediction_text}}";
+
+      //asign value to  textarea
+      document.getElementById("percent").innerHTML=ip;
+    if(val=="Offensive Speech")
+    {
+      let op=document.getElementById("op");
+      op.innerText=val;
+      op.style.color="red";
+    }
+    else
+    {
+      document.getElementById("op").innerHTML=val;
+      document.getElementById("op").style.color="green";
+    }
+
+    function scrollToElement() {
+      // Get the target element by ID
+      var target = document.getElementById('percent');
+    
+      // Smoothly scroll down to the target element
+      target.scrollIntoView({
+        behavior: 'smooth'
+      });
+    }
+    
+    // Call the scroll function after 5 seconds
+    setTimeout(scrollToElement, 1500);
+
+
+    function clk()
+    {
+      let o=" ";
+      document.getElementById("op").innerHTML=o;
+    }
+
+
+
+
+    </script>
+   
+</body>
+<style>
+
+p
+{
+  margin-left: 15%;
+  margin-right: 15%;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size: large;
+}
+#percent
+{
+ background-color: antiquewhite;
+}
+
+
+
+.active {
+  background-color: #04AA6D;
+}
+    </style>
+</html>
