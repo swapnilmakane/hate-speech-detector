@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Hate Speech Recognition</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+  <link rel = "icon" href = "https://www.law.ufl.edu/law/wp-content/uploads/pen-paper-icon-blue.png"  type = "image/x-icon">
+  <style>
+    /* Custom styles */
+   body{
+    overflow-y: hidden;
+   }
+
+    .jumbotron {
+    
+      background-color: #f8f9fa;
+    }
+
+    .active {
+      background-color: #04AA6D;
+    }
+  </style>
+</head>
+<body>
+  <nav style="position: fixed; width: 100%; " class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <h5 class="navbar-brand" href="#">HATE SPEECH DETECTOR</h5>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div style="margin-left: 28%;" class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link" href="http://127.0.0.1:5000/">Home</a>
+        <a class="nav-item nav-link active" href="http://localhost/pages/About.php">About</a>
+        <a class="nav-item nav-link" href="http://localhost/pages/Contact.php">Contact</a>
+        <a class="nav-item nav-link" href="http://localhost/pages/Instruction.php">Instruction</a>
+      </div>
+    </div>
+  </nav>
+
+
+
+  <div class="container" style="padding-top: 1.5%;">
+    <div class="jumbotron">
+      <h1 class="display-4">About Hate Speech Recognition</h1>
+      <p class="lead">We are dedicated to combating hate speech online.</p>
+    </div>
+
+    <h2>Our Mission</h2>
+    <p>
+      At Hate Speech Recognition, we aim to create a safer online environment by developing advanced machine learning algorithms that can automatically detect and flag instances of hate speech on various online platforms.
+    </p>
+
+    <h2>How It Works</h2>
+    <p>
+      Our hate speech recognition system utilizes state-of-the-art natural language processing techniques to analyze text and identify potentially harmful content. It examines various linguistic patterns, semantic meanings, and contextual cues to accurately classify and filter out hate speech.
+    </p>
+
+    <h2>Why It Matters</h2>
+    <p>
+      Hate speech has significant social and psychological consequences, often leading to discrimination, harassment, and the spread of harmful ideologies. By recognizing and addressing hate speech, we strive to foster inclusivity, respect, and healthy online interactions for all users.
+    </p>
+
+    <footer class="mt-5">
+      <hr>
+      <p class="text-center">Hate Speech Recognition &copy; 2023. All rights reserved.</p>
+    </footer>
+  </div>
+
+ 
+</body>
+</html>
